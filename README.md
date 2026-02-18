@@ -104,8 +104,9 @@ If the image contains a title/description in the EXIF metadata field _ImageDescr
 If the `showExif` option is set to `true` (without quotes), some parts of the image's EXIF data will be shown on the bottom bar e.g.: "Canon EOS 80D + EF100-400mm f/4.5-5.6L IS II USM 400mm f/8 1/400sec ISO 2500".
 The EXIF display will only work if you add following lines to your *config.toml*:
 ```TOML
-[imaging.exif]
-    includeFields = ".*"
+[imaging.meta]
+    fields = ["**"]
+    sources = ["exif"]
 ```
 
 An advanced setting is `filterOptions`: It allows the user to filter the displayed images by using buttons.
