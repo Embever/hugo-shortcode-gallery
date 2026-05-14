@@ -118,11 +118,7 @@ Ordinal: {{ .Ordinal}}
 			{{ end }}
 
 			{{/* If the image has EXIF informations, those are merged together with the metadata from the file */}}
-			{{ if in "jpeg png tiff webp" $original.MediaType.SubType }}
-				{{ with $original.Meta }}
-					{{ $metadata = merge .Exif $metadata }}
-				{{ end }}
-			{{ end }}
+			
 
 
 			{{/* Correct orientation of the image, this is needed for thumbnails (and downscaled gallery images)
